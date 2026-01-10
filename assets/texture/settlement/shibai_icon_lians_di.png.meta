@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "12af3dbf-d0fe-4904-9775-88a9d233181f",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 200,
+  "height": 220,
+  "platformSettings": {},
+  "subMetas": {
+    "shibai_icon_lians_di": {
+      "ver": "1.0.6",
+      "uuid": "9f73f960-0ddc-41ea-b74a-ddee2bf3e4a3",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "12af3dbf-d0fe-4904-9775-88a9d233181f",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 200,
+      "height": 220,
+      "rawWidth": 200,
+      "rawHeight": 220,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

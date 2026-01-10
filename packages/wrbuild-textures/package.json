@@ -1,0 +1,7 @@
+{
+  "name": "wrbuild-textures",
+  "version": "0.0.1",
+  "description": "auto compress texture",
+  "author": "ywr",
+  "main": "main.js"
+}

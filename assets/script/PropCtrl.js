@@ -18,6 +18,7 @@ const CocosHelper = require("./CocosHelper");
 const { ITEM_TYPE } = require("./EnumHelper");
 const GameMgr = require("./GameMgr");
 const GuideHelper = require("./GuideHelper");
+const { default: i18nMgr } = require("./i18n/i18nMgr");
 const ItemMgr = require("./ItemMgr");
 const Observer = require("./Observer");
 const PlatformTool = require("./PlatformTool");
@@ -135,7 +136,7 @@ cc.Class({
                 UIHelper.displayUI("PropPop", null, true, true, (page) =>
                 {
                     page.getComponent("UIBase").data = {
-                        desc: "Obtain unlock items to help you pass the level",
+                        desc: i18nMgr.ins.getLabel("unlockHint"),
                         number: this.rewardPropNumber,
                         price : 2000,
                         itemType : ITEM_TYPE.PROP_UNLOCK,
@@ -184,7 +185,7 @@ cc.Class({
                 UIHelper.displayUI("PropPop", null, true, true, (page) =>
                 {
                     page.getComponent("UIBase").data = {
-                        desc: "Obtain undo items to help you pass the level",
+                        desc: i18nMgr.ins.getLabel("undoHint"),
                         number: this.rewardPropNumber,
                         price : 1000,
                         itemType : ITEM_TYPE.PROP_UNDO,
@@ -222,7 +223,7 @@ cc.Class({
                 UIHelper.displayUI("PropPop", null, true, true, (page) =>
                 {
                     page.getComponent("UIBase").data = {
-                        desc: "Obtain hint items to help you pass the level",
+                        desc: i18nMgr.ins.getLabel("hintHint"),
                         number: this.rewardPropNumber,
                         price : 3000,
                         itemType : ITEM_TYPE.PROP_HINT,

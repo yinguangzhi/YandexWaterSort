@@ -71,7 +71,7 @@ module.exports = {
             if (ItemMgr.getLevel() >= this.minAdLevel) {
                 AudioHelper.playAudio(AudioHelper.AUDIO_NAME.MUTE);
 
-                PlatformTool.displayFullAD(_interval, () => {
+                PlatformTool.displayFullAD( () => {
 
                     callback && callback();
                 })

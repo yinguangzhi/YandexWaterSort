@@ -16,6 +16,7 @@ module.exports =
     isTranslating : false,
     isHomeLoaded : false,
     currScene : "launch",
+    lastScene : 'launch',
     fromType : 1,
     translateScene(scene)
     {
@@ -32,6 +33,7 @@ module.exports =
         
         UIHelper.displayUI("ScenePage",null,true, false,(page) =>
         {
+            this.lastScene = this.currScene;
             this.currScene = scene;
 
             if(page) page.getComponent("ScenePage").setData(scene);

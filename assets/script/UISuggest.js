@@ -15,7 +15,6 @@
 
 const UIHelper = require("./UIHelper");
 const Observer = require("./Observer");
-const PlatformTool = require("./PlatformTool");
 const GameParamsHelper = require("./GameParamsHelper");
 const TimerHelper = require("./TimerHelper");
 const { log } = require("console");
@@ -66,7 +65,6 @@ cc.Class({
 
         AudioHelper.playAudio(AudioHelper.AUDIO_NAME.MUTE);
         
-        console.log("begin suggest")
-        PlatformTool.suggestGame(PlatformTool.hexID,"hex");
+        
     },
 });

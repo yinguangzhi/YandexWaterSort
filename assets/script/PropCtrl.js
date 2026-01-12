@@ -53,13 +53,13 @@ cc.Class({
         Observer.register(Observer.EVENT_NAME.REFRESH_PROP,this.refreshProp,this);
         this.refreshProp();
 
-        if (cc.sys.isBrowser && !PlatformTool.isFB) 
+        if (cc.sys.isBrowser && !PlatformTool.isH5) 
         {
             this.isPropMax = false;
             cc.log("it's editor mode");
         }
 
-        if (PlatformTool.isFB)
+        if (PlatformTool.isH5)
         {
             this.isPropMax = false;
         }

@@ -19,7 +19,6 @@ const GameMgr = require("./GameMgr");
 const ImageMgr = require("./ImageMgr");
 const ItemMgr = require("./ItemMgr");
 const Observer = require("./Observer");
-const PlatformTool = require("./PlatformTool");
 const UIBase = require("./UIBase");
 const UIHelper = require("./UIHelper");
 const WebBridge = require("./WebBridge");

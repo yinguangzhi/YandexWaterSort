@@ -36,20 +36,16 @@ cc.Class({
     start()
     {
         PlatformTool.initFullADBefore(true);
+     
         
-        // PlatformTool.checkVibrate();
-
-        // this.node.opacity = 0;
-        // cc.tween(this.node).to(0.24, { opacity: 255 }).start();
-        
-        this.inviteBtn.active = !SceneHelper.isGameScene();
+        this.inviteBtn.active = false// !SceneHelper.isGameScene();
 
         this.homeBtn.active = SceneHelper.isGameScene();
         this.restartBtn.active = SceneHelper.isGameScene();
 
         GameMgr.pauseGame = true;
-        // PlatformTool.isIOS = true;
-        if (!PlatformTool.isPhoneSupportVibrate())// || PlatformTool.isPC || PlatformTool.isIOS
+        
+        if (!PlatformTool.isPhoneSupportVibrate())
         {
             this.layout.spacingY = 66;
             this.vibrateNode.active = false;
@@ -218,10 +214,6 @@ cc.Class({
 
         AudioHelper.playAudio(AudioHelper.AUDIO_NAME.MUTE);
 
-        let _data = {index : 0,score : ItemMgr.getLevel()};
-        PlatformTool.inviteFriend("/image/share",() =>
-        {
-        });
     },
 
     contactAction()
@@ -231,6 +223,5 @@ cc.Class({
         if(!Observer.fireInterval("click",500)) return;
 
         AudioHelper.playAudio(AudioHelper.AUDIO_NAME.MUTE);
-        PlatformTool.communityPage();
     }
 });

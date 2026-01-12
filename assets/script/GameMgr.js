@@ -11,7 +11,6 @@ const { COLOR, PIPE_TYPE, GAME_MODE, LEVEL_MODE, DIFFICULTY, GAME_STATUS, ITEM_T
 const ItemMgr = require("./ItemMgr");
 const MissionMgr = require("./MissionMgr");
 const Observer = require("./Observer");
-const PlatformTool = require("./PlatformTool");
 const StorageHelper = require("./StorageHelper");
 const UIHelper = require("./UIHelper");
 
@@ -706,7 +705,6 @@ module.exports = {
             if (_lll == 1 || _lll == 2 || _lll == 3 || _lll % 5 == 0)
             {
                 let _eID = "Level" + _lll;
-                PlatformTool.logEvent(_eID);
             }
 
             MissionMgr.addMission(MISSION_TYPE.LEVEL, 1);

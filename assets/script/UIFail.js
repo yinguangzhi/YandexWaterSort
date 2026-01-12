@@ -47,7 +47,6 @@ cc.Class({
     start () {
 
         UIHelper.hideUI("UIPause");
-        PlatformTool.setProtoRank("allUser", ItemMgr.getLevel());
         
         PlatformTool.initFullADBefore(true);
         

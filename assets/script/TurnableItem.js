@@ -1,7 +1,6 @@
 
 const UIHelper = require("./UIHelper");
 const Observer = require("./Observer");
-const PlatformTool = require("./PlatformTool");
 const GameParamsHelper = require("./GameParamsHelper");
 const TimerHelper = require("./TimerHelper");
 const { log } = require("console");

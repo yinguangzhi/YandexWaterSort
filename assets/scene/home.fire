@@ -536,7 +536,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 720,
-      "height": 800
+      "height": 920
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -548,7 +548,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        240,
+        180,
         0,
         0,
         0,
@@ -607,7 +607,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 720,
-      "height": 800
+      "height": 920
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -690,7 +690,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -400,
+        -460,
         0,
         0,
         0,
@@ -2088,7 +2088,7 @@
     "_left": 0,
     "_right": 0,
     "_top": 0,
-    "_bottom": 480,
+    "_bottom": 360,
     "_verticalCenter": 0,
     "_horizontalCenter": 0,
     "_isAbsLeft": true,
@@ -2467,7 +2467,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        250,
+        298,
         0,
         0,
         0,
@@ -3808,7 +3808,7 @@
         "__id__": 98
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 100
@@ -5321,7 +5321,7 @@
         "__id__": 128
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 130
@@ -5577,7 +5577,7 @@
         "__id__": 133
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 135
@@ -5863,7 +5863,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -272,
+        0,
         0,
         0,
         0,
@@ -6129,7 +6129,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -408,
+        -136,
         0,
         0,
         0,
@@ -6355,7 +6355,7 @@
         "__id__": 148
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 150
@@ -6941,7 +6941,7 @@
         "__id__": 159
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 161
@@ -7227,7 +7227,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -272,
+        -136,
         0,
         0,
         0,
@@ -7483,7 +7483,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -408,
+        -272,
         0,
         0,
         0,
@@ -7715,7 +7715,7 @@
         "__id__": 178
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 180

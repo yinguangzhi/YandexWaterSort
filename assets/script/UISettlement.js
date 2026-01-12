@@ -48,27 +48,9 @@ cc.Class({
 
         ItemMgr.addItemCount(ITEM_TYPE.COIN, this.rewardQuantity,true);
 
-        PlatformTool.setProtoRank("allUser",ItemMgr.getLevel() );
-        
 
         this.scheduleOnce(() =>
         {
-            let _community = false;
-            let _share = false;
-            if (GameParamsHelper.playNumber % 3 == 0)
-            {
-                // _community = GameData.checkCommunity();    
-            }
-            else if (GameParamsHelper.playNumber % 4 == 0)
-            {
-                // _share = true;
-                // let _shareData = {index : 0,score :ItemMgr.getLevel()};
-                // PlatformTool.updateToPlatform("/image/share",PlatformTool.updateType.share,_shareData,null,() =>
-                // {});    
-            }
-            
-            if (!_community && !_share) PlatformTool.postSessionScore(ItemMgr.getLevel());
-            
         },0.2);
 
         PlatformTool.initVideoADBefore(true);
@@ -81,13 +63,7 @@ cc.Class({
 
     post()
     {
-        let _data = {index : 0,score : ItemMgr.getLevel()};
-        let contextID = PlatformTool.getContextID();
-        if(!CocosHelper.isEmpty(contextID))
-        {
-            PlatformTool.updateToPlatform("/image/share",PlatformTool.updateType.update,_data);
-        }
-
+        
         this.scheduleOnce(() =>
         {
             WebBridge.autoShortcutInCommon(true,null,null);
@@ -107,32 +83,6 @@ cc.Class({
         UIHelper.hideUI(this.node.name);
     },
     
-
-    // playWithFriendAction()
-    // {
-    //     AudioHelper.playAudio(AudioHelper.AUDIO_NAME.CLICK);
-
-    //     if(!Observer.fireInterval("settlement",500)) return;
-
-    //     let _fight = GameParamsHelper.playNumber % 4 == 0;
-    //     let _fUser = PlatformTool.getNextFriend();
-    //     if (_fUser && _fight)
-    //     {
-    //         PlatformTool.fightWithUser(_fUser.id, _fUser.name, _fUser.photo,ItemMgr.getLevel(), () =>
-    //         {
-    //             Observer.fire(Observer.EVENT_NAME.GAME_RE_START);
-    //             this.hide();
-    //         })    
-    //     }
-    //     else
-    //     {
-    //         PlatformTool.playWithFriend((bool) =>
-    //         {
-    //             Observer.fire(Observer.EVENT_NAME.GAME_RE_START);
-    //             this.hide();
-    //         })
-    //     }
-    // },
 
     adAction()
     {
@@ -203,30 +153,6 @@ cc.Class({
 
         AudioHelper.playAudio(AudioHelper.AUDIO_NAME.MUTE);
 
-        let _data = {index : 0,score : ItemMgr.getLevel()};
-        PlatformTool.inviteFriend("/image/share",() =>
-        {
-        });
     },
 
-    // suggestAction()
-    // {
-    //     AudioHelper.playAudio(AudioHelper.AUDIO_NAME.CLICK);
-
-    //     if (!Observer.fireInterval("suggest", 500)) return;
-        
-    //     AudioHelper.playAudio(AudioHelper.AUDIO_NAME.MUTE);
-
-    //     PlatformTool.suggestGame(PlatformTool.neonID);
-    // },
-    // suggestAction2()
-    // {
-    //     AudioHelper.playAudio(AudioHelper.AUDIO_NAME.CLICK);
-
-    //     if (!Observer.fireInterval("suggest", 500)) return;
-        
-    //     AudioHelper.playAudio(AudioHelper.AUDIO_NAME.MUTE);
-
-    //     PlatformTool.suggestGame(PlatformTool.solitaireID);
-    // },
 });

@@ -22,6 +22,7 @@ const { ITEM_TYPE } = require("./EnumHelper");
 const GameMgr = require("./GameMgr");
 const GameParamsHelper = require("./GameParamsHelper");
 const ItemMgr = require("./ItemMgr");
+const PlatformTool = require("./PlatformTool");
 const SceneHelper = require("./SceneHelper");
 const { SCENE_NAME } = require("./SceneHelper");
 const UIHelper = require("./UIHelper");
@@ -203,6 +204,12 @@ cc.Class({
         this.setProgress(this.progress);
 
         this.scheduleOnce(() => { 
+            
+            if(SceneHelper.lastScene == SCENE_NAME.LAUNCH)
+            {
+                PlatformTool.realEnterH5();
+            }
+
             UIHelper.hideUI("ScenePage");
         },0.02)
     },

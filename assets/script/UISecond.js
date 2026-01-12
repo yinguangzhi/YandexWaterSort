@@ -17,7 +17,6 @@ var UIHelper = require("./UIHelper");
 
 var Observer = require("./Observer");
 var StorageHelper = require("./StorageHelper");
-var PlatformTool = require("./PlatformTool");
 const GameParamsHelper = require("./GameParamsHelper");
 const SceneHelper = require("./SceneHelper");
 const AudioHelper = require("./AudioHelper");

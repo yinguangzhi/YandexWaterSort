@@ -15,7 +15,6 @@
 
 const UIHelper = require("./UIHelper");
 const Observer = require("./Observer");
-const PlatformTool = require("./PlatformTool");
 const GameParamsHelper = require("./GameParamsHelper");
 const TimerHelper = require("./TimerHelper");
 const { log } = require("console");
@@ -40,9 +39,7 @@ cc.Class({
     // onLoad () {},
 
     start () {
-        this.bg.height = PlatformTool.isInTournament ? 600 : 680;
-        this.tournamentNode.active = !PlatformTool.isInTournament;
-        console.log(this.bg.height, "  ", PlatformTool.isInTournament); 
+        
     },
 
     // update (dt) {},
@@ -55,22 +52,7 @@ cc.Class({
     
             AudioHelper.playAudio(AudioHelper.AUDIO_NAME.MUTE);
             
-            console.log("begin invite")
-            PlatformTool.inviteFriend("image/share",(_state,_result) =>
-            {
-                if (!cc.isValid(this)) return;
-                
-                if (_result)
-                {
-                    console.log("begin invite 4 : ", _result.code)
-                    
-                    if (_result.code && _result.code == "PENDING_REQUEST")
-                    {
-                        HintHelper.displayHint("Pending Request.please wait a minute");
-                    }
-                }
-                // if(this.shareNode) this.shareNode.active = false;
-            });
+           
         },
     
         shareAction()
@@ -81,36 +63,6 @@ cc.Class({
     
             AudioHelper.playAudio(AudioHelper.AUDIO_NAME.MUTE);
     
-    
-            let _data = { index: 0, score: ItemMgr.getLevel() };
-            
-            // UIHelper.displayMask(true);
-    
-            // let _t = setTimeout(() => {
-            //     UIHelper.displayMask(false);
-            // }, 5000);
-    
-            PlatformTool.updateToPlatform("/image/share", PlatformTool.updateType.share, _data, (err) =>
-            {
-                
-            }, (_result) =>
-            {
-                // UIHelper.displayMask(false);
-             
-                // clearTimeout(_t);
-                
-                if (!cc.isValid(this)) return;
-    
-    
-                if (_result)
-                {
-                    if (_result.code && _result.code == "PENDING_REQUEST")
-                    {
-                        HintHelper.displayHint("Pending Request.please wait a minute");
-                    }
-                }
-                // if(this.shareNode) this.shareNode.active = false;
-            });
         },
         
         contactAction()
@@ -121,21 +73,6 @@ cc.Class({
             if(!Observer.fireInterval("contact",500))
                 return;
     
-            PlatformTool.communityPage((_could,_result) =>
-            {
-                if (!_could)
-                {
-                    HintHelper.displayHint("Unable follow official page,please wait.");
-                }
-                else
-                {
-                    if (!_result)
-                    {
-                        HintHelper.displayHint("follow official page fail,please wait.");
-                    }
-                }
-                
-            });
         },
     
         
@@ -145,10 +82,6 @@ cc.Class({
             
             if(!Observer.fireInterval("home",500)) return;
     
-            console.log("joinGameGroup.............. ");
-            PlatformTool.joinGameGroup((state) =>
-            {
-            });
         },
     
         tournamentAction()
@@ -158,20 +91,7 @@ cc.Class({
             if(!Observer.fireInterval("tournament",500))
                 return;
     
-            PlatformTool.createTournament(ItemMgr.getLevel(),(state) =>
-            {
-                if (!state) return;
-                
-                let _canvas = cc.find("Canvas");
-                if (!_canvas) return;
-
-                let _hp = _canvas.getComponent('HomePage');
-                if (!_hp) return;
-
-                _hp.realEnterGame();
-                
-                UIHelper.hideUI("UISocial");
-            });
+            
         },
         
     
@@ -182,11 +102,6 @@ cc.Class({
             if(!Observer.fireInterval("home",1000)) return;
     
             AudioHelper.playAudio(AudioHelper.AUDIO_NAME.MUTE);
-            
-            PlatformTool.playWithFriend((bool) =>
-            {
-                if (!cc.isValid(this)) return;
-                
-            })
+           
         },
 });

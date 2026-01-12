@@ -1,0 +1,50 @@
+{
+    "Start_Game": "Start Game",
+    "Challenge": "Challenge",
+    "Leaderboard": "Leaderboard",
+    
+    "Sort": "Sort",
+    
+    "Obtain": "Obtain",
+    
+    "Retry": "Retry",
+    "Records": "Records",
+    
+    "Ready_Play": "Ready to Play! ",
+    "Level": "Level",
+    
+    
+    "Music": "Music",
+    "Sound": "Sound",
+    "Vibrate": "Vibrate",
+    "Home": "Home",
+    "Restart": "REPLAY",
+    "Quit": "QUIT",
+    "Settings": "Settings",
+    
+    "Get": "Get",
+    "No_thanks": "No,thanks",
+    "Amazing": "Amazing",
+    "Finished": "#0 Finished",
+    "Continue": "Continue",
+    "Gacha" : "Gacha",
+    "Daily Gift" : "Daily Gift",
+    "Day 1" : "Day 1",
+    "Day 2" : "Day 2",
+    "Day 3" : "Day 3",
+    "Day 4" : "Day 4",
+    "Day 5" : "Day 5",
+    "Day 6" : "Day 6",
+    "Day 7" : "Day 7",
+    "Claim" : "Claim",
+    
+    "Acquire" : "Acquire",
+    "Amazing2" : "Amazing",
+    "Lobby Upgrade" : "Lobby Upgrade",
+    "Next Level" : "Next Level",
+    "Take it" : "Take it",
+    "Free" : "Free",
+    "Loading" : "Загружается",
+    "Loading2" : "Загружается...",
+    "coinNotEnough":"coin is not enough."
+}

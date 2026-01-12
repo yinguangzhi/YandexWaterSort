@@ -31,6 +31,7 @@ const { ITEM_TYPE } = require("./EnumHelper");
 const WebBridge = require("./WebBridge");
 const RankHelper = require("./RankHelper");
 const PoolHelper = require("./PoolHelper");
+const { default: i18nMgr } = require("./i18n/i18nMgr");
 // cc.dynamicAtlasManager.maxFrameSize = 1024;
 
     
@@ -59,13 +60,10 @@ cc.Class({
         // }
 
         PlatformTool.init();
+        i18nMgr.ins.setLanguage(PlatformTool.lang);
 
         RankHelper.generateRankList();
 
-        // PlatformTool.adConvert("891189492878640_891190909545165")//banner
-        // PlatformTool.adConvert("891189492878640_891190996211823")//full
-        // PlatformTool.adConvert("891189492878640_891191129545143")//video
-        
         StorageHelper.readBoardData();
         StorageHelper.readUserDataFromPlatform( () =>
         {
@@ -73,7 +71,6 @@ cc.Class({
             AudioHelper.setAudioState(StorageHelper.getItem(StorageHelper.STORAGE_PROPERTY.AUDIO) == 1);
             AudioHelper.setMusicState(StorageHelper.getItem(StorageHelper.STORAGE_PROPERTY.MUSIC) == 1);
 
-            PlatformTool.bindPause();
             PlatformTool.initPlayer();
 
             setTimeout(() => {
@@ -85,10 +82,6 @@ cc.Class({
                 WebBridge.displayBannerInCommon();
             }, 5000);
 
-            setTimeout(() => {
-                PlatformTool.setConnectPlayer()
-            }, 15000);
-            PlatformTool.setConnectPlayer();
             
             this.realEnterScene();
 

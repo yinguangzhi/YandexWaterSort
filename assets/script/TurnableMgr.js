@@ -9,7 +9,6 @@
 const Config = require("./Config");
 const { ITEM_TYPE } = require("./EnumHelper");
 const ItemMgr = require("./ItemMgr");
-const PlatformTool = require("./PlatformTool");
 
 module.exports = {
     angles : [
@@ -81,20 +80,6 @@ module.exports = {
 
     canForceSuggest()
     {
-        let _suggestedLevel = ItemMgr.getItemCount(ITEM_TYPE.SUGGESTED_LEVEL);
-        let _level = ItemMgr.getItemCount(ITEM_TYPE.LEVEL);
-        
-        if (PlatformTool.isIOS) return false;
-        
-        // if (!Config.canPopSuggest) return false;
-
-        if (_suggestedLevel == _level) return false;
-
-        if (_level == 7 ||
-            (_level > 7 && _level < 30 && _level % 6 == 0) ||
-            (_level > 30 && _level % 10 == 0))
-            return true;
-
         return false;
     },
 

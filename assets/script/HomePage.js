@@ -55,26 +55,13 @@ cc.Class({
         SceneHelper.isTranslating = false;
         this.scheduleOnce(() =>
         {
-            if (!Config.enteredHome)
-            {
-                PlatformTool.getEntryPoint();
-            }
+           
             Config.enteredHome = true;
 
             SceneHelper.translateComplete();
             if (TurnableMgr.canForcePop())
             {
                 UIHelper.displayUI("UITurnable", null, true, true, null);
-            }
-            else if (TurnableMgr.canForceSuggest())
-            {
-                Config.canPopSuggest = false;
-                
-                let _level = ItemMgr.getLevel();
-                ItemMgr.setItemCount(ITEM_TYPE.SUGGESTED_LEVEL, _level,true);
-
-                
-                UIHelper.displayUI("UISuggest", null, true, true, null);
             }
                 
         }, 0.3)
@@ -88,55 +75,11 @@ cc.Class({
         this.streakFailNode.active = ItemMgr.getItemCount(ITEM_TYPE.STREAK) <= 0;
         if (this.suggestNode)
         {
-            this.suggestNode.active = !PlatformTool.isIOS;
-            // if (this.suggestNode.active)
-            // {
-            //     cc.tween(this.suggestNode)
-            //         .to(0.4, { scale: 1.16 })
-            //         .to(0.6, { scale: 1 })
-            //         .delay(0.2)
-            //         .union()
-            //         .repeatForever()
-            //         .start();
-            // }
+            this.suggestNode.active = false;
         }
 
-        PlatformTool.isInTournament = true;
         if (this.tournamentNode) this.tournamentNode.active = false;
-        PlatformTool.getCurrentTournament((tournament) =>
-        {
-            if (!cc.isValid(this)) return;
-
-            try
-            {
-                if (tournament && tournament.getEndTime())
-                {
-                    let _isOut = TimerHelper.isOutTime(tournament.getEndTime() * 1000)
-                    console.log("is tournament out : ", _isOut);
-                    
-                    if (this.tournamentNode)
-                    {
-                        this.tournamentNode.active = _isOut;
-                    }
-                    
-                    PlatformTool.isInTournament = !_isOut;
-                }
-                else
-                {
-                    PlatformTool.isInTournament = false;
-                    
-                    if (this.tournamentNode) this.tournamentNode.active = true;
-                }    
-            }
-            catch (err)
-            {
-                console.log("get curr tournament in home error : ", err);
-                
-                PlatformTool.isInTournament = false;
-
-                if (this.tournamentNode) this.tournamentNode.active = true;
-            }
-        })
+        
     },
 
     start()
@@ -158,16 +101,7 @@ cc.Class({
         PlatformTool.initFullADBefore(true);
 
         this.setShortcutState(false);
-        this.scheduleOnce( () =>
-        {
-            WebBridge.autoShortcutInCommon(true,(_check) =>
-            {
-                if(cc.isValid(this)) this.setShortcutState(_check);
-            },(_create) =>
-            {
-                if(cc.isValid(this)) this.setShortcutState(!_create);;
-            })
-        }, 0.1);
+        
         
         SceneHelper.preLoadScene(SceneHelper.SCENE_NAME.GAME, () =>
         {
@@ -234,22 +168,6 @@ cc.Class({
 
         AudioHelper.playAudio(AudioHelper.AUDIO_NAME.MUTE);
         
-        console.log("begin invite")
-        PlatformTool.inviteFriend("image/share",(_state,_result) =>
-        {
-            if (!cc.isValid(this)) return;
-            
-            if (_result)
-            {
-                console.log("begin invite 4 : ", _result.code)
-                
-                if (_result.code && _result.code == "PENDING_REQUEST")
-                {
-                    HintHelper.displayHint("Pending Request.please wait a minute");
-                }
-            }
-            // if(this.shareNode) this.shareNode.active = false;
-        });
     },
 
     HexAction()
@@ -259,9 +177,7 @@ cc.Class({
         if(!Observer.fireInterval("suggest",1000)) return;
 
         AudioHelper.playAudio(AudioHelper.AUDIO_NAME.MUTE);
-        
-        console.log("begin suggest")
-        PlatformTool.suggestGame(PlatformTool.hexID,"hex");
+       
     },
     
     shareAction()
@@ -273,35 +189,6 @@ cc.Class({
         AudioHelper.playAudio(AudioHelper.AUDIO_NAME.MUTE);
 
 
-        let _data = { index: 0, score: ItemMgr.getLevel() };
-        
-        // UIHelper.displayMask(true);
-
-        // let _t = setTimeout(() => {
-        //     UIHelper.displayMask(false);
-        // }, 5000);
-
-        PlatformTool.updateToPlatform("/image/share", PlatformTool.updateType.share, _data, (err) =>
-        {
-            
-        }, (_result) =>
-        {
-            // UIHelper.displayMask(false);
-         
-            // clearTimeout(_t);
-            
-            if (!cc.isValid(this)) return;
-
-
-            if (_result)
-            {
-                if (_result.code && _result.code == "PENDING_REQUEST")
-                {
-                    HintHelper.displayHint("Pending Request.please wait a minute");
-                }
-            }
-            // if(this.shareNode) this.shareNode.active = false;
-        });
     },
     
     shortcutAction()
@@ -313,13 +200,7 @@ cc.Class({
 
         AudioHelper.playAudio(AudioHelper.AUDIO_NAME.MUTE);
         
-            
-        PlatformTool.createShortcut(false, (_bool) =>
-        {
-            if(!cc.isValid(this)) return;
-            this.setShortcutState(_bool);
-            if(!_bool) HintHelper.displayHint("Failed to create a shortcut")
-        });
+        
     },
 
     setShortcutState(_state)
@@ -364,13 +245,7 @@ cc.Class({
         if(!Observer.fireInterval("play",2000)) return;
 
         AudioHelper.playAudio(AudioHelper.AUDIO_NAME.MUTE);
-        
-        PlatformTool.playWithFriend((bool) =>
-        {
-            if (!cc.isValid(this)) return;
-            
-            this.realEnterGame();
-        })
+       
     },
 
     

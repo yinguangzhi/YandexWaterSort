@@ -2610,7 +2610,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 205.26,
+      "width": 251,
       "height": 65.52
     },
     "_anchorPoint": {
@@ -2622,8 +2622,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        54.845,
-        3,
+        58,
+        4,
         0,
         0,
         0,
@@ -2666,7 +2666,7 @@
     "_N$string": "Level 25",
     "_fontSize": 52,
     "_lineHeight": 52,
-    "_enableWrapText": true,
+    "_enableWrapText": false,
     "_N$file": null,
     "_isSystemFontUsed": true,
     "_spacingX": 0,
@@ -2676,7 +2676,7 @@
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
-    "_N$overflow": 0,
+    "_N$overflow": 2,
     "_N$cacheMode": 0,
     "_id": "07dwqeNTRN3Ji3cdx/zEHJ"
   },

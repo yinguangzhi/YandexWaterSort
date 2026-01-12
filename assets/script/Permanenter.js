@@ -52,9 +52,9 @@ cc.Class({
             
         }, 50000);
 
-        if (typeof window.console !== 'undefined' && console.log) {
-            window.console.log = function() {}; // 禁用控制台输出
-        }
+        // if (typeof window.console !== 'undefined' && console.log) {
+        //     window.console.log = function() {}; // 禁用控制台输出
+        // }
     },
 
     start() {

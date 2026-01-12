@@ -28,6 +28,7 @@ const ImageMgr = require("./ImageMgr");
 const TurnableMgr = require("./TurnableMgr");
 const MissionMgr = require("./MissionMgr");
 const Config = require("./Config");
+const { default: i18nMgr } = require("./i18n/i18nMgr");
 
 cc.Class({
     extends: UIBase,
@@ -70,7 +71,7 @@ cc.Class({
         UIHelper.hideUI("UIPause");
         UIHelper.hideUI("UISecond");
 
-        this.levelLabel.string = 'Level ' + ItemMgr.getItemCount(ITEM_TYPE.LEVEL);
+        this.levelLabel.string = i18nMgr.ins.getLabel('Level') + ' ' + ItemMgr.getItemCount(ITEM_TYPE.LEVEL);
         this.streakLabel.string = ItemMgr.getItemCount(ITEM_TYPE.STREAK);
         this.streakFailNode.active = ItemMgr.getItemCount(ITEM_TYPE.STREAK) <= 0;
         if (this.suggestNode)

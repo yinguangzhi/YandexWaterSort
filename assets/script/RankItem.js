@@ -27,6 +27,7 @@ const GameMgr = require("./GameMgr");
 const ItemMgr = require("./ItemMgr");
 const HintHelper = require("./HintHelper");
 const ColorHelper = require("./ColorHelper");
+const { default: i18nMgr } = require("./i18n/i18nMgr");
 
 cc.Class({
     extends: SSDScript,
@@ -87,6 +88,7 @@ cc.Class({
 
         this.rankLabel.string = this.data.rank;
         this.nameLabel.string = this.data.name;
-        this.scoreLabel.string = "Level " + this.data.score;
+        
+        this.scoreLabel.string = i18nMgr.ins.getLabel('Level') + ' ' + this.data.score;
     }
 });

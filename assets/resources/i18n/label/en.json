@@ -2,6 +2,8 @@
     "Start_Game": "Start Game",
     "Challenge": "Challenge",
     "Leaderboard": "Leaderboard",
+    "World" : "WORLD",
+    "Friend" : "FRIEND",
     
     "Sort": "Sort",
     
@@ -25,9 +27,9 @@
     "Get": "Get",
     "No_thanks": "No,thanks",
     "Amazing": "Amazing",
-    "Finished": "#0 Finished",
     "Continue": "Continue",
-    "Gacha" : "Gacha",
+    "Daily Rewards" : "DAILY REWARDS",
+
     "Daily Gift" : "Daily Gift",
     "Day 1" : "Day 1",
     "Day 2" : "Day 2",
@@ -36,15 +38,16 @@
     "Day 5" : "Day 5",
     "Day 6" : "Day 6",
     "Day 7" : "Day 7",
-    "Claim" : "Claim",
+
+    "Claim" : "CLAIM",
     
     "Acquire" : "Acquire",
     "Amazing2" : "Amazing",
     "Lobby Upgrade" : "Lobby Upgrade",
     "Next Level" : "Next Level",
     "Take it" : "Take it",
-    "Free" : "Free",
-    "Loading" : "Загружается",
-    "Loading2" : "Загружается...",
+    "FREE" : "FREE",
+    "Loading" : "Loading",
+    "Loading2" : "Loading...",
     "coinNotEnough":"coin is not enough."
 }

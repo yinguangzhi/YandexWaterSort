@@ -94,7 +94,7 @@ export default class i18nMgr {
             {
                 this._labelConfig = (assets as cc.JsonAsset).json;
 
-                // console.log(this._labelConfig);
+                console.log((assets as cc.JsonAsset).json);
                 
                 for (let com of this._componentList) {
                     if(com) com.resetValue();

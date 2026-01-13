@@ -32,6 +32,9 @@
     "Amazing": "Amazing",
     "Continue?": "Continue?",
     "Continue": "Continue",
+    "ContinueDesc": "Click continue to keep winning",
+    "Give up" : "Give up?",
+
     "Daily Rewards" : "DAILY REWARDS",
 
     "Daily Gift" : "Daily Gift",
@@ -65,6 +68,6 @@
     "Loading" : "Loading",
     "Loading2" : "Loading...",
     "coinNotEnough":"coin is not enough.",
-    "Watch videos" : "Watch videos to get extra time",
+    "Watch videos2" : "Watch videos to get extra time",
     "Restart a winning streak" : "Restart a winning streak"
 }

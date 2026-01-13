@@ -3,15 +3,16 @@ const ItemMgr = require("./ItemMgr");
 const StorageHelper = require("./StorageHelper");
 
 module.exports = {
+    //Пройди #0 уровней
     missionConfigs: [
-        {id : 1,desc : "Finish 10 Levels",type : MISSION_TYPE.LEVEL,cost : 10,reward : 10},
-        {id : 2,desc : "Finish 20 Levels",type : MISSION_TYPE.LEVEL,cost : 20,reward : 10},
-        {id : 3,desc : "Finish 40 Levels",type : MISSION_TYPE.LEVEL,cost : 40,reward : 20},
-        {id : 4,desc : "Watch 5 Videos",type : MISSION_TYPE.AD,cost : 5,reward : 10},
-        {id : 5,desc : "Watch 10 Videos",type : MISSION_TYPE.AD,cost : 10,reward : 10},
-        {id : 6,desc : "Watch 20 Videos",type : MISSION_TYPE.AD,cost : 20,reward : 20},
-        {id : 7,desc : "Login for one day",type : MISSION_TYPE.LOGIN,cost : 1,reward : 10},
-        {id : 8,desc : "Login for 3 days",type : MISSION_TYPE.LOGIN,cost : 3,reward : 10},
+        {id : 1,desc : "Finish 10 Levels",descLang : "Finish Level",params : 10,type : MISSION_TYPE.LEVEL,cost : 10,reward : 10},
+        {id : 2,desc : "Finish 20 Levels",descLang : "Finish Level",params : 20,type : MISSION_TYPE.LEVEL,cost : 20,reward : 10},
+        {id : 3,desc : "Finish 40 Levels",descLang : "Finish Level",params : 40,type : MISSION_TYPE.LEVEL,cost : 40,reward : 20},
+        {id : 4,desc : "Watch 5 Videos",descLang : "Watch Videos",params : 5,type : MISSION_TYPE.AD,cost : 5,reward : 10},
+        {id : 5,desc : "Watch 10 Videos",descLang : "Watch Videos",params : 10,type : MISSION_TYPE.AD,cost : 10,reward : 10},
+        {id : 6,desc : "Watch 20 Videos",descLang : "Watch Videos",params : 20,type : MISSION_TYPE.AD,cost : 20,reward : 20},
+        {id : 7,desc : "Login for one day",descLang : "Login for days",params : 1,type : MISSION_TYPE.LOGIN,cost : 1,reward : 10},
+        {id : 8,desc : "Login for 3 days",descLang : "Login for days",params : 3,type : MISSION_TYPE.LOGIN,cost : 3,reward : 10},
     ],
 
 

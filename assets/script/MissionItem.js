@@ -8,6 +8,7 @@
 const AudioHelper = require("./AudioHelper");
 const CocosHelper = require("./CocosHelper");
 const { MISSION_TYPE } = require("./EnumHelper");
+const { default: i18nMgr } = require("./i18n/i18nMgr");
 const MissionMgr = require("./MissionMgr");
 const Observer = require("./Observer");
 const SSDScript = require("./SSDScript");
@@ -44,7 +45,8 @@ cc.Class({
         this.claimedBtn.active = _pInfo.claimed;
         this.pfLabel.string = _pInfo.percentDesc;
         this.pf.node.width = _pInfo.percent * 210;
-        this.descLabel.string = this.data.desc;
+        // this.descLabel.string = this.data.desc;
+        this.descLabel.string = i18nMgr.ins.getLabel(this.data.descLang,[this.data.params]) ;
     },
 
     refreshNext()

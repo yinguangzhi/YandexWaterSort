@@ -483,7 +483,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 151.99,
+      "width": 178.69,
       "height": 60.48
     },
     "_anchorPoint": {
@@ -535,8 +535,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Obtain",
-    "_N$string": "Obtain",
+    "_string": "Obtains",
+    "_N$string": "Obtains",
     "_fontSize": 48,
     "_lineHeight": 48,
     "_enableWrapText": true,
@@ -561,7 +561,7 @@
       "__id__": 11
     },
     "_enabled": true,
-    "_key": "Obtain",
+    "_key": "Obtains",
     "_params": [],
     "_id": ""
   },
@@ -2043,7 +2043,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -48,
+        -53.600000000000044,
         2,
         0,
         0,
@@ -2141,7 +2141,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 96.35,
+      "width": 117.35,
       "height": 56.7
     },
     "_anchorPoint": {

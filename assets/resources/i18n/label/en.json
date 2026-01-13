@@ -8,6 +8,7 @@
     "Sort": "Sort",
     
     "Obtains": "Obtains",
+    "Spin": "SPIN",
     
     "Retry": "Retry",
     "Records": "Records",
@@ -24,6 +25,8 @@
     "Quit": "QUIT",
     "Settings": "Settings",
     
+    "Select": "Select",
+    "Go": "Go",
     "Get": "Get",
     "No_thanks": "No,thanks",
     "Amazing": "Amazing",
@@ -43,6 +46,12 @@
     "unlockHint" : "Obtain unlock items to help you pass the level",
     "undoHint" : "Obtain undo items to help you pass the level",
     "hintHint" : "Obtain hint items to help you pass the level",
+    "spinDesc" : "Win 5 levels to Spin the Wheel",
+    "Weekly Tasks" : "Weekly Tasks",
+    "Count down" : "Count down",
+    "Finish Level" : "Finish #0 Level",
+    "Watch Videos" : "Watch #0 Videos",
+    "Login for days" : "Login for #0 days",
 
     "Claim" : "CLAIM",
     

@@ -60,8 +60,8 @@ cc.Class({
         // }
 
         PlatformTool.init();
-        PlatformTool.lang= 'ru';
-        i18nMgr.ins.setLanguageFromExternal(PlatformTool.lang);
+        // PlatformTool.lang= 'ru';
+        i18nMgr.ins.setLanguageFromExternal(PlatformTool.lang.toLowerCase());
 
         RankHelper.generateRankList();
 
